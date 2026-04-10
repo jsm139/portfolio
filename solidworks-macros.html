@@ -1,59 +1,148 @@
-# SolidWorks Macros — Case Study
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SolidWorks Macros — Case Study</title>
+  <meta name="description" content="SolidWorks automation macros case study by Jonathan Mendoza." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
 
-This page highlights custom **SolidWorks automation macros** I developed to reduce repetitive drafting work, improve consistency, and speed up drawing workflows. Each macro is demonstrated with a short GIF and accompanied by a technical breakdown of the logic behind it.
+<body class="theme-light">
 
----
+<header class="header">
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <div class="brand-logo">JM</div>
+      <div class="brand-name">Jonathan Mendoza</div>
+    </a>
 
-## 🎯 Goals
+    <nav class="menu">
+      <a href="index.html#projects">Projects</a>
+      <a href="solidworks-macros.html">Macros</a>
+      <a href="index.html#experience">Experience</a>
+      <a href="index.html#skills">Skills</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
 
-- Reduce time spent on repetitive drawing tasks
-- Improve drawing consistency and readability
-- Leverage the SolidWorks API to automate common workflows
-- Create reusable tools that support multi-selection and real-world drafting habits
+<main id="main">
 
----
+<section>
+  <div class="container">
+    <h1 class="section-title">SolidWorks Macros — Case Study</h1>
+    <p class="section-sub">
+      Custom SolidWorks automation tools built to reduce repetitive drafting work,
+      improve consistency, and accelerate drawing workflows.
+    </p>
+  </div>
+</section>
 
-## 🛠️ Tools & Technologies
+<section>
+  <div class="container">
+    <h2 class="section-title">Goals</h2>
+    <ul>
+      <li>Reduce time spent on repetitive drawing tasks</li>
+      <li>Improve drawing consistency and readability</li>
+      <li>Leverage the SolidWorks API to automate common workflows</li>
+      <li>Create reusable tools that support multi-selection and real-world drafting habits</li>
+    </ul>
+  </div>
+</section>
 
-- **SolidWorks API**
-- **VB (VBA)** macros (`.swp`)
-- SolidWorks Drawings & Annotations
-- Geometry-based logic (leader X/Y evaluation)
-- User interaction via prompts
+<section>
+  <div class="container">
+    <h2 class="section-title">Tools & Technologies</h2>
+    <ul>
+      <li>SolidWorks API</li>
+      <li>VB / VBA macros (.swp)</li>
+      <li>SolidWorks Drawings & Annotations</li>
+      <li>Geometry‑based logic (leader X/Y evaluation)</li>
+      <li>User interaction via prompts</li>
+    </ul>
+  </div>
+</section>
 
----
+<section>
+  <div class="container">
+    <h2 class="section-title">Macro 1 — Balloon Orientation</h2>
 
-## 📌 Macro 1 — Balloon Orientation
+    <p><strong>Filename:</strong> BalloonOrientation.swp</p>
 
-**Filename:** `BalloonOrientation.swp`
-<p>
-  https://github.com/jsm139/solidworks-macros/tree/main/BalloonOrientation
-    View Code on GitHub
-  </a>
-</p>
+    <h3>Problem</h3>
+    <p>
+      In large or frequently edited drawings, balloons often become misaligned.
+      Manually rotating multiple balloon notes to match the drawing layout is
+      repetitive and time‑consuming—especially when many callouts are involved.
+    </p>
 
-### Problem
+    <h3>Solution</h3>
+    <p>
+      This macro automatically orients drawing balloons
+      <strong>vertically or horizontally</strong> based on the leader’s X/Y direction
+      and a user‑selected orientation.
+    </p>
 
-In large or frequently edited drawings, balloons often become misaligned. Manually rotating balloon notes to match the drawing layout is repetitive and error-prone—especially when multiple balloons are involved.
+    <ul>
+      <li>Uses the balloon leader’s X/Y location</li>
+      <li>Applies consistent orientation logic</li>
+      <li>Supports <strong>single or multiple balloon selections</strong></li>
+      <li>Executes instantly within SolidWorks drawings</li>
+    </ul>
 
-### Solution
+    <h3>How It Works (High‑Level)</h3>
+    <ol>
+      <li>User selects one or more drawing balloons</li>
+      <li>Macro prompts for desired orientation (vertical or horizontal)</li>
+      <li>
+        For each balloon:
+        <ul>
+          <li>Evaluates leader endpoint X/Y direction</li>
+          <li>Determines optimal text rotation</li>
+          <li>Applies orientation while preserving leader attachment</li>
+        </ul>
+      </li>
+    </ol>
 
-This macro automatically orients drawing balloons **vertically or horizontally** based on the **leader direction (X/Y location)** and a user-selected orientation.
+    <h3>Demo</h3>
+    <div class="card">
+      <img src="assets/projects/BalloonOrientation.gif"
+           alt="SolidWorks Balloon Orientation macro demo" />
+    </div>
 
-It supports:
-- Single or **multiple balloon selections**
-- Consistent placement logic based on geometry
-- Quick execution directly from SolidWorks
+    <h3>Why This Matters</h3>
+    <ul>
+      <li>Saves several minutes per drawing</li>
+      <li>Ensures drafting consistency across sheets</li>
+      <li>Scales efficiently for drawings with many callouts</li>
+      <li>Demonstrates SolidWorks API + geometry reasoning</li>
+    </ul>
 
-### How It Works (High-Level)
+    <h3>Code</h3>
+    <p>
+      <a class="link"
+         href="https://github.com/jsm139/solidworks-macros/tree/main/BalloonOrientation"
+         target="_blank" rel="noopener">
+        View Code on GitHub
+      </a>
+    </p>
 
-1. User selects one or more balloons in a drawing
-2. Macro prompts for desired orientation (vertical or horizontal)
-3. For each selected balloon:
-   - Evaluates leader endpoint X/Y direction
-   - Determines optimal text rotation
-   - Applies orientation while preserving leader attachment
+    <p style="color: var(--muted); font-size: 13px;">
+      *Demonstration uses non‑proprietary sample drawings.*
+    </p>
 
-### Demo
+  </div>
+</section>
 
-*(Animated GIF showing before → macro execution → after)*
+</main>
+
+<footer>
+  <div class="container">
+    <p>© Jonathan Mendoza. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
+``
