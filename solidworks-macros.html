@@ -1,0 +1,54 @@
+# SolidWorks Macros — Case Study
+
+This page highlights custom **SolidWorks automation macros** I developed to reduce repetitive drafting work, improve consistency, and speed up drawing workflows. Each macro is demonstrated with a short GIF and accompanied by a technical breakdown of the logic behind it.
+
+---
+
+## 🎯 Goals
+
+- Reduce time spent on repetitive drawing tasks
+- Improve drawing consistency and readability
+- Leverage the SolidWorks API to automate common workflows
+- Create reusable tools that support multi-selection and real-world drafting habits
+
+---
+
+## 🛠️ Tools & Technologies
+
+- **SolidWorks API**
+- **VB (VBA)** macros (`.swp`)
+- SolidWorks Drawings & Annotations
+- Geometry-based logic (leader X/Y evaluation)
+- User interaction via prompts
+
+---
+
+## 📌 Macro 1 — Balloon Orientation
+
+**Filename:** `BalloonOrientation.swp`
+
+### Problem
+
+In large or frequently edited drawings, balloons often become misaligned. Manually rotating balloon notes to match the drawing layout is repetitive and error-prone—especially when multiple balloons are involved.
+
+### Solution
+
+This macro automatically orients drawing balloons **vertically or horizontally** based on the **leader direction (X/Y location)** and a user-selected orientation.
+
+It supports:
+- Single or **multiple balloon selections**
+- Consistent placement logic based on geometry
+- Quick execution directly from SolidWorks
+
+### How It Works (High-Level)
+
+1. User selects one or more balloons in a drawing
+2. Macro prompts for desired orientation (vertical or horizontal)
+3. For each selected balloon:
+   - Evaluates leader endpoint X/Y direction
+   - Determines optimal text rotation
+   - Applies orientation while preserving leader attachment
+
+### Demo
+
+*(Animated GIF showing before → macro execution → after)*
