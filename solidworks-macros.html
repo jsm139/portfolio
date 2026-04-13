@@ -134,7 +134,77 @@
 
   </div>
 </section>
+  
+<section>
+  <div class="container">
+    <h2 class="section-title">Macro 2 — Center Drawing View</h2>
 
+    <p><strong>Filename:</strong> CenterDrawingView.swp</p>
+
+    <h3>Problem</h3>
+    <p>
+      When working with long or narrow components—such as ball screws or shafts—
+      drawing views often require repeated manual repositioning to achieve a
+      visually balanced layout. This interrupts the dimensioning workflow and
+      can make it difficult to maintain consistency across drawings.
+    </p>
+
+    <h3>Solution</h3>
+    <p>
+      This macro automatically centers a selected drawing view on the active
+      drawing sheet by aligning it in both the X and Y directions. It is intended
+      to improve visual clarity and create a clean, well‑balanced starting point
+      for dimensioning.
+    </p>
+
+    <ul>
+      <li>Centers the selected drawing view in X and Y</li>
+      <li>Operates on the active drawing sheet</li>
+      <li>Requires only a single view selection</li>
+      <li>Executes instantly within SolidWorks</li>
+    </ul>
+
+    <h3>How It Works (High‑Level)</h3>
+    <ol>
+      <li>User selects a drawing view</li>
+      <li>Macro calculates the center of the active sheet</li>
+      <li>View position is updated to match the sheet center</li>
+      <li>Dimensions can then be placed neatly and consistently</li>
+    </ol>
+
+    <h3>Demo</h3>
+    <div class="card">
+      <img
+        src="assets/projects/CenterDrawingView.gif"
+        alt="SolidWorks Center Drawing View macro demonstration"
+      />
+    </div>
+
+    <h3>Why This Matters</h3>
+    <ul>
+      <li>Improves drawing readability and visual balance</li>
+      <li>Reduces repetitive view repositioning</li>
+      <li>Helps ensure clean, symmetric dimension placement</li>
+      <li>Especially useful for long parts such as ball screws</li>
+    </ul>
+
+    <h3>Code</h3>
+    <p>
+      <a
+        class="link"
+        href="https://github.com/jsm139/solidworks-macros/tree/main/CenterDrawingView"
+        target="_blank"
+        rel="noopener"
+      >
+        View Code on GitHub
+      </a>
+    </p>
+
+    <p style="color: var(--muted); font-size: 13px;">
+      *Demonstration uses non‑proprietary sample drawings.*
+    </p>
+  </div>
+</section>
 </main>
 
 <footer>
