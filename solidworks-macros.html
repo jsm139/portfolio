@@ -205,6 +205,80 @@
     </p>
   </div>
 </section>
+
+<section>
+  <div class="container">
+    <h2 class="section-title">Macro 3 — Expand Feature Tree</h2>
+
+    <p><strong>Filename:</strong> ExpandFeatureTree.swp</p>
+
+    <h3>Problem</h3>
+    <p>
+      SolidWorks provides options to collapse items in the FeatureManager tree
+      (such as grouped component instances, folders, and mate folders), but does
+      not provide a native option to expand them back programmatically.
+      This can make it difficult to quickly identify hidden, suppressed, or
+      patterned components in large assemblies.
+    </p>
+
+    <p>
+      While mate folders can become extremely long and noisy when expanded,
+      grouped component instances and feature folders are often critical for
+      understanding assembly structure and visibility state.
+    </p>
+
+    <h3>Solution</h3>
+    <p>
+      This macro automatically expands grouped component instances and feature
+      folders in the FeatureManager tree, improving assembly visibility and
+      navigation. Mate folders are intentionally excluded to avoid unnecessary
+      clutter.
+    </p>
+
+    <ul>
+      <li>Expands grouped component instances</li>
+      <li>Expands feature folders</li>
+      <li>Improves visibility of hidden and suppressed parts</li>
+      <li>Leaves mate folders collapsed to reduce tree noise</li>
+      <li>Executes instantly in large assemblies</li>
+    </ul>
+
+    <h3>How It Works (High‑Level)</h3>
+    <ol>
+      <li>Macro scans the FeatureManager design tree</li>
+      <li>Identifies expandable group and folder nodes</li>
+      <li>Programmatically expands only relevant tree items</li>
+      <li>Skips mate folders to preserve usability</li>
+    </ol>
+
+    <h3>Demo</h3>
+    <div class="card">
+      <img src="assets/projects/ExpandFeatureTree.gif"
+           alt="SolidWorks macro expanding grouped components and folders in the feature tree">
+    </div>
+
+    <h3>Why This Matters</h3>
+    <ul>
+      <li>Quickly exposes hidden or suppressed components</li>
+      <li>Reduces time spent manually clicking through the tree</li>
+      <li>Improves situational awareness in complex assemblies</li>
+      <li>Balances automation with usability by avoiding mate folder expansion</li>
+    </ul>
+
+    <h3>Code</h3>
+    <p>
+      <a href="https://github.com/jsm139/solidworks-macros/tree/main/ExpandFeatureTree"
+         target="_blank" rel="noopener">
+        View Code on GitHub
+      </a>
+    </p>
+
+    <p style="color: var(--muted); font-size: 13px;">
+      *Demonstration uses non‑proprietary sample assemblies.*
+    </p>
+  </div>
+</section>
+  
 </main>
 
 <footer>
