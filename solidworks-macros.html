@@ -278,6 +278,87 @@
     </p>
   </div>
 </section>
+<section>
+  <div class="container">
+    <h2 class="section-title">Macro 4 — Sort Feature Tree</h2>
+
+    <p><strong>Filename:</strong> SortFeatureTree.swp</p>
+
+    <h3>Problem</h3>
+    <p>
+      In large SolidWorks assemblies, top‑level components are often added over
+      time without a consistent order. This can result in a FeatureManager tree
+      that is difficult to scan, making it harder to locate components and
+      understand overall assembly structure.
+    </p>
+
+    <p>
+      Native SolidWorks tools do not provide an intuitive way to sort components
+      based on common part‑number naming conventions, especially when instance
+      numbers are involved.
+    </p>
+
+    <h3>Solution</h3>
+    <p>
+      This macro reorders top‑level assembly components into a predictable,
+      human‑readable order. It is designed around typical mechanical part naming
+      practices and safely updates the FeatureManager tree without destabilizing
+      the assembly.
+    </p>
+
+    <ul>
+      <li>Includes suppressed top‑level components</li>
+      <li>Groups components by name type (numeric‑starting vs letter‑starting)</li>
+      <li>Sorts by base component name and numeric instance order</li>
+      <li>Reorders components using a safe FeatureManager folder method</li>
+    </ul>
+
+    <h3>How It Works (High‑Level)</h3>
+    <ol>
+      <li>Macro retrieves the root component of the active configuration</li>
+      <li>All top‑level components are collected, including suppressed ones</li>
+      <li>Components are grouped based on how their names begin</li>
+      <li>Each group is sorted using unified comparison logic</li>
+      <li>A temporary FeatureManager folder is used to safely reorder components</li>
+      <li>The temporary folder is removed and the tree is rebuilt</li>
+    </ol>
+
+    <h3>Demo</h3>
+    <div class="card">
+      <img
+        src="assets/projects/SortFeatureTree.gif"
+        alt="SolidWorks Sort Feature Tree macro demo"
+      />
+    </div>
+
+    <h3>Why This Matters</h3>
+    <ul>
+      <li>Makes large assembly trees easier and faster to navigate</li>
+      <li>Preserves intuitive numeric part ordering</li>
+      <li>Improves component discoverability</li>
+      <li>Avoids unsafe or unstable tree modifications</li>
+      <li>Demonstrates careful use of SolidWorks FeatureManager APIs</li>
+    </ul>
+
+    <h3>Code</h3>
+    <p>
+      <a
+        class="link"
+        href="https://github.com/jsm139/solidworks-macros/tree/main/SortFeatureTree"
+        target="_blank"
+        rel="noopener"
+      >
+        View Code on GitHub
+      </a>
+    </p>
+
+    <p style="color: var(--muted); font-size: 13px;">
+      *Demonstration uses non‑proprietary sample assemblies.*
+    </p>
+  </div>
+</section>
+``
+  
   
 </main>
 
