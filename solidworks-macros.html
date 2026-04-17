@@ -441,8 +441,87 @@
     </p>
   </div>
 </section>
+<section>
+  <div class="container">
+    <h2 class="section-title">Macro 6 — Insert Selected Component</h2>
 
-  
+    <p><strong>Filename:</strong> InsertSelectedComponent.swp</p>
+
+    <h3>Problem</h3>
+    <p>
+      SolidWorks provides several ways to insert components into an assembly—such
+      as the Insert Component command, Ctrl‑dragging from the FeatureManager tree,
+      pattern features, and Copy with Mates. While powerful, these tools are
+      typically optimized for final placement, mate definition, or patterned
+      behavior.
+    </p>
+
+    <p>
+      In practice, there are many situations where the immediate goal is simply to
+      bring one or more copies of a component into an assembly quickly, without
+      worrying about mates or precise placement. Existing insertion methods can
+      introduce unnecessary steps and interrupt design flow when working in early
+      layout or iterative design stages.
+    </p>
+
+    <h3>Solution</h3>
+    <p>
+      This macro provides a fast, low‑friction workflow for inserting one or more
+      copies of a selected component into the active assembly. It defers mating
+      and placement intent, allowing the engineer to focus on overall layout and
+      structure before refining constraints later.
+    </p>
+
+    <p>
+      The macro uses the currently selected component as the source and prompts
+      the user for the number of copies to insert using a simple input form.
+    </p>
+
+    <ul>
+      <li>Requires a selected part or subassembly</li>
+      <li>Prompts for the number of copies to insert</li>
+      <li>Inserts all requested instances in a single action</li>
+      <li>Defers mate and placement decisions intentionally</li>
+      <li>Handles cancellation safely</li>
+    </ul>
+
+    <h3>How It Works (High‑Level)</h3>
+    <ol>
+      <li>Verifies that an assembly document is active</li>
+      <li>Reads the currently selected component</li>
+      <li>Prompts the user for copy count via a lightweight input form</li>
+      <li>If cancelled, exits without modifying the assembly</li>
+      <li>Inserts the selected component the specified number of times</li>
+    </ol>
+
+    <h3>Demo</h3>
+    <div class="card">
+      <img src="assets/projects/InsertSelectedComponent.gif"
+           alt="Insert Selected Component macro demonstration">
+    </div>
+
+    <h3>Why This Matters</h3>
+    <ul>
+      <li>Speeds up early‑stage assembly layout</li>
+      <li>Reduces friction when adding repeated components</li>
+      <li>Supports iterative and exploratory design workflows</li>
+      <li>Avoids premature mate definition</li>
+      <li>Improves overall assembly‑building efficiency</li>
+    </ul>
+
+    <h3>Code</h3>
+    <p>
+      <a href="https://github.com/jsm139/solidworks-macros/tree/main/InsertSelectedComponent"
+         target="_blank" rel="noopener">
+        View Code on GitHub
+      </a>
+    </p>
+
+    <p style="color: var(--muted); font-size: 13px;">
+      *Demonstration uses non‑proprietary sample assemblies.*
+    </p>
+  </div>
+</section>
   
 </main>
 
