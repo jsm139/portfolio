@@ -357,7 +357,91 @@
     </p>
   </div>
 </section>
-``
+<section>
+  <div class="container">
+    <h2 class="section-title">Macro 5 — Select Floating Parts</h2>
+
+    <p><strong>Filename:</strong> SelectFloatingPart.swp</p>
+
+    <h3>Problem</h3>
+    <p>
+      During assembly development, SolidWorks may report an assembly as
+      under‑defined even when it appears visually complete, or report a large
+      assembly as fully defined while some components remain floating.
+    </p>
+
+    <p>
+      Although SolidWorks provides an Advanced Component Selection tool to help
+      identify under‑defined components, using it requires navigating multiple
+      menus, defining search criteria, and manually applying filters each time a
+      check is needed. In large or fastener‑heavy assemblies, this disrupts
+      workflow and discourages frequent validation.
+    </p>
+
+    <h3>Solution</h3>
+    <p>
+      This macro encapsulates the Advanced Component Selection logic into a
+      single, repeatable action. It evaluates the constraint status of
+      <strong>top‑level components only</strong> and automatically selects
+      under‑constrained parts.
+    </p>
+
+    <p>
+      Once selected, the floating components can be immediately isolated in the
+      graphics view, making it easy to pinpoint missing or incomplete mates
+      without inspecting parts one at a time.
+    </p>
+
+    <ul>
+      <li>Identifies under‑constrained top‑level components</li>
+      <li>Selects floating components directly in the graphics area</li>
+      <li>Eliminates manual Advanced Select setup</li>
+      <li>Avoids traversing into subassemblies</li>
+      <li>Provides non‑blocking progress feedback</li>
+      <li>Supports ESC key cancellation</li>
+      <li>Executes efficiently in large assemblies</li>
+    </ul>
+
+    <h3>How It Works (High‑Level)</h3>
+    <ol>
+      <li>Verifies that an assembly document is active</li>
+      <li>Retrieves the root component of the active configuration</li>
+      <li>Iterates through top‑level child components only</li>
+      <li>Evaluates each component using <code>GetConstrainedStatus</code></li>
+      <li>Selects all under‑constrained components</li>
+      <li>Displays progress and a final selection summary</li>
+    </ol>
+
+    <h3>Demo</h3>
+    <div class="card">
+      <img src="assets/projects/SelectFloatingPart.gif"
+           alt="SelectFloatingPart macro demo showing floating components being selected">
+    </div>
+
+    <h3>Why This Matters</h3>
+    <ul>
+      <li>Reduces multi‑step Advanced Select workflows to a single action</li>
+      <li>Encourages frequent constraint validation during design</li>
+      <li>Improves accuracy during assembly reviews</li>
+      <li>Scales well for large and fastener‑heavy assemblies</li>
+      <li>Provides deterministic, repeatable diagnostic results</li>
+    </ul>
+
+    <h3>Code</h3>
+    <p>
+      <a href="https://github.com/jsm139/solidworks-macros/tree/main/SelectFloatingParts"
+         target="_blank" rel="noopener">
+        View Code on GitHub
+      </a>
+    </p>
+
+    <p style="color: var(--muted); font-size: 13px;">
+      *Demonstration uses a SolidWorks‑provided sample assembly included with the
+      standard installation tutorials.*
+    </p>
+  </div>
+</section>
+
   
   
 </main>
