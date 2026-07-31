@@ -1,31 +1,22 @@
-// Dark mode toggle with localStorage
-(function(){
-  const root = document.body;
-  const key = 'jm-theme';
-  const saved = localStorage.getItem(key);
-  if(saved){ root.className = saved; }
-  document.addEventListener('click', (e)=>{
-    const btn = e.target.closest('[data-toggle-theme]');
-    if(btn){
-      const next = root.classList.contains('theme-light') ? '' : 'theme-light';
-      if(next) root.className = 'theme-light'; else root.className = '';
-      localStorage.setItem(key, root.className);
-    }
+const layers = document.querySelectorAll('.parallax-layer');
+let targetX = 0, targetY = 0, currentX = 0, currentY = 0;
+window.addEventListener('mousemove', event => {
+  targetX = (event.clientX / window.innerWidth - 0.5) * 2;
+  targetY = (event.clientY / window.innerHeight - 0.5) * 2;
+});
+window.addEventListener('deviceorientation', event => {
+  if (event.gamma !== null && event.beta !== null) {
+    targetX = Math.max(-1, Math.min(1, event.gamma / 35));
+    targetY = Math.max(-1, Math.min(1, event.beta / 35));
+  }
+});
+function animateParallax(){
+  currentX += (targetX - currentX) * 0.05;
+  currentY += (targetY - currentY) * 0.05;
+  layers.forEach(layer => {
+    const depth = parseFloat(layer.dataset.depth || 0.03);
+    layer.style.transform = `translate3d(${currentX * depth * 420}px, ${currentY * depth * 260}px, 0)`;
   });
-})();
-
-// Contact form: open mailto with composed subject/body
-(function(){
-  const form = document.querySelector('#contact-form');
-  if(!form) return;
-  form.addEventListener('submit', (e)=>{
-    e.preventDefault();
-    const data = new FormData(form);
-    const name = encodeURIComponent(data.get('name')||'');
-    const email = encodeURIComponent(data.get('email')||'');
-    const message = encodeURIComponent(data.get('message')||'');
-    const subject = `Portfolio contact from ${name}`;
-    const body = `Name: ${name}%0AEmail: ${email}%0A---%0A${message}`;
-    window.location.href = `mailto:jonathan.mendoza@example.com?subject=${subject}&body=${body}`;
-  });
-})();
+  requestAnimationFrame(animateParallax);
+}
+animateParallax();

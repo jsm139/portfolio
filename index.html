@@ -4,334 +4,168 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jonathan Mendoza — Mechanical Engineer Portfolio</title>
-
-  <meta name="description"
-        content="Portfolio of Jonathan Mendoza, Mechanical Engineer specializing in CNC automation and SolidWorks productivity tooling." />
-
+  <meta name="description" content="Portfolio of Jonathan Mendoza, Mechanical Engineer specializing in CNC systems, SolidWorks automation, failure analysis, and manufacturing documentation." />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-  <meta name="theme-color" content="#0ea5e9" />
-
   <link rel="stylesheet" href="styles.css" />
   <script defer src="script.js"></script>
 </head>
+<body>
+  <div class="space-scene" aria-hidden="true">
+    <div class="parallax-layer nebula-layer" data-depth="0.018"></div>
+    <div class="parallax-layer stars-large" data-depth="0.030"></div>
+    <div class="parallax-layer stars-medium" data-depth="0.055"></div>
+    <div class="parallax-layer stars-small" data-depth="0.085"></div>
+    <div class="grid-horizon"></div>
+    <div class="shooting-star" style="--top:8%;--left:-12%;--length:210px;--angle:22deg;--duration:5.8s;--delay:0.5s;--travel-x:120vw;--travel-y:48vh;"></div>
+    <div class="shooting-star" style="--top:20%;--left:58%;--length:150px;--angle:145deg;--duration:6.4s;--delay:2.2s;--travel-x:-90vw;--travel-y:50vh;"></div>
+    <div class="shooting-star" style="--top:62%;--left:-18%;--length:250px;--angle:18deg;--duration:7.4s;--delay:4.1s;--travel-x:130vw;--travel-y:30vh;"></div>
+    <div class="energy-beam beam-1"></div>
+    <div class="energy-beam beam-2"></div>
+    <div class="energy-beam beam-3"></div>
+  </div>
+  <div class="scanline" aria-hidden="true"></div>
 
-<body class="theme-light">
-  <a href="#main" class="visually-hidden">Skip to content</a>
-
-  <!-- Header / Navigation -->
-  <header class="header">
-    <div class="container nav">
-      <a class="brand" href="#hero">
-        <div class="brand-logo"><span>JM</span></div>
-        <div class="brand-name">Jonathan Mendoza</div>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="#hero" aria-label="Jonathan Mendoza home">
+        <span class="logo-mark"></span>
+        <span>Jonathan Mendoza</span>
       </a>
-
-      <nav class="menu">
+      <nav class="nav-links" aria-label="Primary navigation">
         <a href="#projects">Projects</a>
         <a href="solidworks-macros.html">Macros</a>
         <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
         <a href="#contact">Contact</a>
       </nav>
-
-      <div class="actions">
-        <a class="btn ghost"
-           href="assets/Jonathan_Mendoza_Resume.pdf"
-           download>Resume</a>
-        <button class="btn" data-toggle-theme title="Toggle light/dark">🌗</button>
-      </div>
+      <a class="resume-link" href="assets/Jonathan_Mendoza_Resume.pdf" download>Resume</a>
     </div>
   </header>
 
-  <!-- Main Content -->
-  <main id="main">
-
-    <!-- Hero -->
+  <main id="main" class="page">
     <section id="hero" class="hero">
-      <div class="container hero-grid">
-        <div>
-          <h1>
-            Mechanical Engineering that bridges
-            <span class="gradient">design</span>
-            and
-            <span class="gradient-alt">manufacturing</span>.
-          </h1>
-
-<p>
-  I'm <strong>Jonathan Mendoza</strong>, a Mechanical Engineer specializing in
-  CNC machine systems, retrofit kits, and engineering automation. I focus on
-  improving product reliability, streamlining assembly workflows, and developing
-  practical tooling—such as SolidWorks macros—to eliminate repetitive engineering tasks.
-</p>
-
-
-          <div class="pills">
-            <span class="pill">SolidWorks</span>
-            <span class="pill">GD&amp;T</span>
-            <span class="pill">CNC</span>
-            <span class="pill">DFM/DFA</span>
-            <span class="pill">Automation</span>
-            <span class="pill">VBA</span>
-          </div>
-
-          <div class="cta">
-            <a class="btn primary" href="#projects">See Projects</a>
-            <a class="btn" href="#contact">Contact Me</a>
-          </div>
-        </div>
-
-        <div class="hero-visual">
-          <img src="assets/profile.png"
-               alt="Professional Headshot" />
+      <div class="hero-copy">
+        <div class="kicker">Engineering systems online</div>
+        <h1>
+          <span>Mechanical</span>
+          <span class="title-gradient">Engineering</span>
+        </h1>
+        <p>
+          I'm <strong>Jonathan Mendoza</strong>, a Mechanical Engineer specializing in CNC machine systems,
+          retrofit kits, failure analysis, and engineering automation. I build practical tools and documentation
+          that improve reliability, speed up assembly workflows, and reduce repetitive engineering work.
+        </p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#projects">View Projects</a>
+          <a class="btn btn-secondary" href="solidworks-macros.html">SolidWorks Macros</a>
         </div>
       </div>
+      <aside class="command-card" aria-label="Engineering profile panel">
+        <div class="card-header"><span>Portfolio System</span><span>Active</span></div>
+        <div class="profile-orb">
+          <img src="assets/profile.jpg" alt="Jonathan Mendoza portfolio headshot" onerror="this.src='assets/portrait_placeholder.svg'" />
+        </div>
+        <div class="status-list">
+          <div class="status-row"><span>CAD</span><div class="meter"><span style="width:94%"></span></div><span>94%</span></div>
+          <div class="status-row"><span>CNC</span><div class="meter"><span style="width:88%"></span></div><span>88%</span></div>
+          <div class="status-row"><span>Automation</span><div class="meter"><span style="width:91%"></span></div><span>91%</span></div>
+        </div>
+      </aside>
     </section>
 
-    <!-- Projects -->
-    <section id="projects">
+    <section id="projects" class="content-section">
       <div class="container">
         <h2 class="section-title">Selected Projects</h2>
-        <p class="section-sub">
-          Engineering work focused on DFM, non-conformance management, commissioning, rapid prototying, tooling, and documentation.
-        </p>
-
+        <p class="section-sub">Engineering work focused on DFM, non-conformance management, commissioning, rapid prototyping, tooling, and documentation.</p>
         <div class="grid cols-3">
-
-          <article class="card">
-            <img src="assets/projects/project-1.svg"
-                 alt="CNC Drive Assembly — Redacted Drawing" />
+          <article class="hud-card">
+            <div class="project-image placeholder-cyan">CNC</div>
             <div class="card-body">
               <h3>CNC Drive Assembly — Redacted Drawing</h3>
-              <p>
-                Engineering drawing showing the mechanical layout of a ball screw assembly for a CNC mill.
-              </p>
-              <div class="tags">
-                <span class="tag">Drawing</span>
-                <span class="tag">CNC</span>
-                <span class="tag">Redacted</span>
-              </div>
-              <p>
-                <a class="link"
-                   href="assets/drawings/CNC_Drive_Assembly_Drawing.pdf"
-                   target="_blank" rel="noopener">
-                  View Drawing (PDF)
-                </a>
-              </p>
+              <p>Engineering drawing showing the mechanical layout of a ball screw assembly for a CNC mill.</p>
+              <div class="tags"><span>Drawing</span><span>CNC</span><span>Redacted</span></div>
+              <a class="text-link" href="assets/drawings/CNC_Drive_Assembly_Drawing.pdf" target="_blank" rel="noopener">View Drawing (PDF)</a>
             </div>
           </article>
-                    <article class="card">
-            <img src="assets/projects/project-2.svg"
-                 alt="CNC Turret Coolant Leakage Failure Analysis" />
-          
+          <article class="hud-card">
+            <div class="project-image placeholder-green">EFA</div>
             <div class="card-body">
               <h3>CNC Turret Coolant Leakage — Failure Analysis</h3>
-          
-              <p>
-                Performed a structured engineering investigation into position‑dependent
-                coolant leakage on a CNC turning center. Identified root cause through
-                teardown and inspection, coordinated corrective action, and verified
-                resolution through full system testing.
-              </p>
-          
-              <div class="tags">
-                <span class="tag">Failure Analysis</span>
-                <span class="tag">Root Cause</span>
-                <span class="tag">CNC Systems</span>
-                <span class="tag">Reliability</span>
-              </div>
-          
-              <p>
-                <a class="link"
-                   href="coolant-leakage-failure-analysis.html">
-                  View Case Study →
-                </a>
-              </p>
+              <p>Performed a structured engineering investigation into position-dependent coolant leakage on a CNC turning center.</p>
+              <div class="tags"><span>Failure Analysis</span><span>Root Cause</span><span>Reliability</span></div>
+              <a class="text-link" href="coolant-leakage-failure-analysis.html">View Case Study →</a>
             </div>
           </article>
-
+          <article class="hud-card">
+            <div class="project-image placeholder-violet">SW</div>
+            <div class="card-body">
+              <h3>SolidWorks Macro Toolkit</h3>
+              <p>Custom SolidWorks API macros for drawing cleanup, assembly diagnostics, tree organization, and faster workflows.</p>
+              <div class="tags"><span>SolidWorks API</span><span>VBA</span><span>Automation</span></div>
+              <a class="text-link" href="solidworks-macros.html">View Macro Case Study →</a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- Skills -->
-    <section id="skills">
+    <section id="skills" class="content-section">
       <div class="container">
         <h2 class="section-title">Skills</h2>
-
-<div class="grid cols-3">
-
-  <article class="card">
-    <div class="card-body">
-      <h3>CAD & Drafting</h3>
-      <p>
-        SolidWorks, Inventor, AutoCAD, DraftSight — production drawings,
-        assemblies, GD&T (ASME Y14.5), and tolerance definition.
-      </p>
-    </div>
-  </article>
-
-  <article class="card">
-    <div class="card-body">
-      <h3>Manufacturing & CNC</h3>
-      <p>
-        CNC systems, retrofit kits, machining workflows, DFM/DFA,
-        prototyping, and production release support.
-      </p>
-    </div>
-  </article>
-
-  <article class="card">
-    <div class="card-body">
-      <h3>Automation & Programming</h3>
-      <p>
-        SolidWorks API (VBA macros), Python, MATLAB, Java —
-        focused on workflow automation and productivity tooling.
-      </p>
-    </div>
-  </article>
-
-  <article class="card">
-    <div class="card-body">
-      <h3>Engineering Processes</h3>
-      <p>
-        Engineering Change Requests (ECR), New Product Introduction (NPI),
-        BOM management, documentation, and cross‑functional release workflows.
-      </p>
-    </div>
-  </article>
-
-  <article class="card">
-    <div class="card-body">
-      <h3>Prototyping & Testing</h3>
-      <p>
-        3D printing, rapid prototyping, data acquisition, inspection,
-        and validation of mechanical systems.
-      </p>
-    </div>
-  </article>
-
-  <article class="card">
-    <div class="card-body">
-      <h3>Languages</h3>
-      <p>
-        English (Native), Spanish (Fluent), Portuguese (Fluent)
-      </p>
-    </div>
-  </article>
-
-</div>
+        <div class="grid cols-3">
+          <article class="hud-card"><div class="card-body"><h3>CAD & Drafting</h3><p>SolidWorks, Inventor, AutoCAD, DraftSight, production drawings, assemblies, GD&T, and tolerance definition.</p></div></article>
+          <article class="hud-card"><div class="card-body"><h3>Manufacturing & CNC</h3><p>CNC systems, retrofit kits, machining workflows, DFM/DFA, prototyping, and production release support.</p></div></article>
+          <article class="hud-card"><div class="card-body"><h3>Automation & Programming</h3><p>SolidWorks API, VBA macros, Python, MATLAB, and Java for workflow automation and productivity tooling.</p></div></article>
+          <article class="hud-card"><div class="card-body"><h3>Engineering Processes</h3><p>ECR, NPI, BOM management, documentation, and cross-functional release workflows.</p></div></article>
+          <article class="hud-card"><div class="card-body"><h3>Prototyping & Testing</h3><p>3D printing, rapid prototyping, data acquisition, inspection, and validation of mechanical systems.</p></div></article>
+          <article class="hud-card"><div class="card-body"><h3>Languages</h3><p>English (Native), Spanish (Fluent), Portuguese (Fluent).</p></div></article>
+        </div>
+      </div>
     </section>
 
-    <!-- Experience -->
-    <section id="experience">
+    <section id="experience" class="content-section">
       <div class="container">
         <h2 class="section-title">Experience</h2>
-<div class="timeline">
-
-  <div class="item">
-    <h4>Junior Mechanical Engineer</h4>
-    <div class="meta">
-      TRAK Machine Tools — Feb 2021–Present · Rancho Dominguez, CA
-    </div>
-    <p>
-      Manage product lifecycles through Engineering Change Requests (ECR) and
-      New Product Introductions (NPI). Design mechanical parts and assemblies
-      for CNC machines using SolidWorks.
-    </p>
-    <p>
-      Develop detailed drawings for manufacturing, create and maintain
-      engineering BOMs, and collaborate with electrical teams on cable routing
-      and system integration. Work with suppliers on CAD requests, inspection,
-      and quality assurance.
-    </p>
-  </div>
-
-  <div class="item">
-    <h4>Mechanical Engineering Intern</h4>
-    <div class="meta">
-      Maxwell Vehicles — Aug 2020–Nov 2020 · Remote
-    </div>
-    <p>
-      Designed shipping package assemblies for electric vehicle systems using
-      SolidWorks. Created repeatable build drawings and organized BOM structures
-      to support production manufacturing.
-    </p>
-  </div>
-
-</div>
-
+        <div class="timeline">
+          <article class="timeline-item">
+            <h3>Junior Mechanical Engineer</h3>
+            <p class="meta">TRAK Machine Tools — Feb 2021–Present · Rancho Dominguez, CA</p>
+            <p>Manage product lifecycles through ECR and NPI, design mechanical parts and assemblies for CNC machines, create engineering BOMs, develop manufacturing drawings, and collaborate with electrical teams and suppliers.</p>
+          </article>
+          <article class="timeline-item">
+            <h3>Mechanical Engineering Intern</h3>
+            <p class="meta">Maxwell Vehicles — Aug 2020–Nov 2020 · Remote</p>
+            <p>Designed shipping package assemblies for electric vehicle systems, created repeatable build drawings, and organized BOM structures to support production manufacturing.</p>
+          </article>
+        </div>
       </div>
     </section>
-<!-- Education -->
-<section id="education">
-  <div class="container">
-    <h2 class="section-title">Education & Credentials</h2>
 
-    <div class="grid cols-2">
-
-      <article class="card">
-        <div class="card-body">
-          <h3>B.S. Mechanical Engineering</h3>
-          <p>
-            California State University, Los Angeles<br>
-            Minor in Computer Science<br>
-            2015 – 2020
-          </p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-body">
-          <h3>Certifications</h3>
-          <p>
-            Engineer in Training (EIT) — NCEES (2020)<br>
-            Certified SolidWorks Professional (CSWP) — Dassault Systèmes (2020)
-          </p>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- Contact -->
-<section id="contact">
-  <div class="container">
-    <h2 class="section-title">Contact Me</h2>
-
-    <div class="contact">
-      <div class="card">
-        <div class="card-body">
-
-          <h3>Email</h3>
-          <p>
-            <a class="link"
-               href="mailto:mendozajonathan053@gmail.com">
-              mendozajonathan053@gmail.com
-            </a>
-          </p>
-
-          <h3>LinkedIn</h3>
-          <p>
-            <a class="link"
-               href="https://linkedin.com/in/jm139"
-               target="_blank" rel="noopener">
-              linkedin.com/in/jm139
-            </a>
-          </p>
-
+    <section id="education" class="content-section">
+      <div class="container">
+        <h2 class="section-title">Education & Credentials</h2>
+        <div class="grid cols-2">
+          <article class="hud-card"><div class="card-body"><h3>B.S. Mechanical Engineering</h3><p>California State University, Los Angeles<br>Minor in Computer Science<br>2015–2020</p></div></article>
+          <article class="hud-card"><div class="card-body"><h3>Certifications</h3><p>Engineer in Training (EIT) — NCEES (2020)<br>Certified SolidWorks Professional (CSWP) — Dassault Systèmes (2020)</p></div></article>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
+    <section id="contact" class="content-section">
+      <div class="container">
+        <h2 class="section-title">Contact Me</h2>
+        <div class="hud-card contact-card">
+          <div class="card-body">
+            <h3>Email</h3>
+            <p><a class="text-link" href="mailto:mendozajonathan053@gmail.com">mendozajonathan053@gmail.com</a></p>
+            <h3>LinkedIn</h3>
+            <p><a class="text-link" href="https://linkedin.com/in/jm139" target="_blank" rel="noopener">linkedin.com/in/jm139</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
-
-  <footer>
-    <div class="container">
-      <p>© 2026 Jonathan Mendoza. All rights reserved.</p>
-    </div>
-  </footer>
+  <footer class="footer"><div class="container"><p>© 2026 Jonathan Mendoza. All rights reserved.</p></div></footer>
 </body>
 </html>
